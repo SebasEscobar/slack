@@ -1,0 +1,13 @@
+syntax = "proto3";
+option go_package = "github.com/tessthedog/slack";
+import "google/protobuf/empty.proto";
+package slack;
+
+message AnnounceRequest {
+  string channel = 1;
+  string msg = 2;
+}
+
+service Slack {
+  rpc Announce (AnnounceRequest) returns (google.protobuf.Empty) {}
+}
